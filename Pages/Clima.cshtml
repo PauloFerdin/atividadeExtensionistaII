@@ -1,0 +1,25 @@
+﻿@page
+@model ClimaModel
+@{
+    ViewData["Title"] = "Dados Climáticos em Tempo Real";
+ 
+}
+<div class="menu">
+    <h2>Dados Climáticos em Tempo Real</h2>
+
+    <form method="post">
+        <div>
+            <label>Digite o nome da cidade:</label>
+            <input type="text" asp-for="Cidade" />
+        </div>
+        <button type="submit" class="btn-custom">Buscar</button>
+    </form>
+
+    @if (Model.Clima != null)
+    {
+        <h3>Clima atual em @Model.Cidade:</h3>
+        <p>Temperatura: @Model.Clima.main.temp °C</p>
+        <p>Humidade: @Model.Clima.main.humidity %</p>
+        <p>Condições: @Model.Clima.weather[0].description</p>
+    }
+</div>

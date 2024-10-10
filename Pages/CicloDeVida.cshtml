@@ -1,0 +1,43 @@
+﻿@page
+@model CicloDeVidaModel
+@{
+    ViewData["Title"] = "Calculadora de Ciclo de Vida de Produtos";
+}
+
+<h2>Calculadora de Ciclo de Vida de Produtos</h2>
+
+<form method="post">
+    <div>
+        <label>Selecione o Tipo de Produto:</label>
+        <select asp-for="TipoProduto">
+            <option value="roupas">Roupas</option>
+            <option value="eletronicos">Eletrônicos</option>
+            <option value="alimentos">Alimentos</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Distância de Transporte (em km):</label>
+        <input type="number" asp-for="DistanciaTransporte" />
+    </div>
+
+    <div>
+        <label>Vida útil do produto (em anos):</label>
+        <input type="number" asp-for="VidaUtil" />
+    </div>
+
+    <div>
+        <label>Energia Consumida Durante o Uso (em kWh por ano):</label>
+        <input type="number" asp-for="EnergiaUso" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+
+@if (Model.Resultado != null)
+{
+    <h3>Resultado:</h3>
+    <p>O impacto estimado do ciclo de vida do produto é: @Model.Resultado toneladas de CO₂.</p>
+}
+
+}

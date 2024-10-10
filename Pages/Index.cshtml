@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bem vindo ao App de Aquecimento Global";
+}
+
+<div class="menu">
+    <h2 class="texto">Bem-vindo ao App de Aquecimento Global</h2>
+
+    <p class="texto">
+        Este aplicativo visa conscientizar sobre os danos que o aquecimento global e as mudanças climáticas têm causado ao nosso planeta.
+    </p>
+</div>
+    <div class="menu">
+        <div class="button-container">
+            <a asp-page="/Propostas" class="btn btn-custom">Oque o mundo diz?</a>
+            <a asp-page="/Calculadora" class="btn btn-custom">Calcular Emissão de Carbono</a>
+            <a asp-page="/Clima" class="btn btn-custom">Como está o Clima na sua cidade?</a>
+        </div>
+    </div>
+
+<div class="menu">
+    <h3 class="texto">Danos ao Planeta</h3>
+    <p class="texto">
+        O aquecimento global é o aumento anormal da temperatura média do planeta registrado nos últimos anos. Esse fenômeno está diretamente relacionado às ações antrópicas (atividades do homem).</p>
+    <p class="texto">
+        A Terra é coberta por uma camada de gases, composta por gás carbônico (CO²), metano (CH4), óxido nitroso (N²O) e vapor d’água. Essa camada impede que o calor dos raios solares absorvido se disperse totalmente, mantendo equilibrada a temperatura no planeta. Parte da radiação solar que chega na Terra é refletida e retorna para o espaço. Outra parte é absorvida pela superfície terrestre e pelos oceanos. E uma outra parcela é retida por esta camada de gases, que causa um fenômeno natural, chamado de efeito estufa, que é fundamental para a manutenção da vida no planeta. Sem ele, a Terra seria extremamente gelada, o que não permitiria a existência e sobrevivência das espécies.
+    </p>
+    <p class="texto">
+        Ocorre que essa camada de gases vem aumentando com o passar dos anos, devido a certas atividades humanas, iniciadas com a Revolução Industrial, que emitem uma grande quantidade de gases formadores do efeito estufa, os chamados GEE – gases de efeito estufa (o dióxido de carbono, o metano, o óxido nitroso e os CFCs – clorofluorcarbonos, causadores do “buraco” na camada de ozônio), fato que tem aumentado a temperatura da atmosfera terrestre e dos oceanos e provocado o aquecimento global. Alguns exemplos de ações humanas, que aumentam o aquecimento global são: a poluição do ar e das águas; a queima de combustíveis fósseis (derivados do petróleo, como diesel e gasolina, carvão mineral e gás natural) para geração de energia; certas atividades industriais e transporte; agropecuária; descarte de resíduos sólidos; queimadas e desmatamento.
+    </p>
+    <p class="texto">
+        O principal órgão responsável pela pesquisa, sistematização e divulgação de estudos relacionados com o aquecimento global é o Painel Intergovernamental sobre Mudanças Climáticas (IPCC). O Painel Intergovernamental sobre Mudança do Clima foi criado, em 1988, pelo Programa das Nações Unidas para o Meio Ambiente e pela Organização Meteorológica Mundial, com o objetivo de fornecer aos formuladores de políticas avaliações científicas frequentes sobre a mudança do clima, suas implicações e possíveis riscos futuros, bem como para propor opções de adaptação e mitigação. O Brasil é membro do IPCC.
+    </p>
+    <p class="texto">
+        Fonte:<a href="https://semil.sp.gov.br/educacaoambiental/prateleira-ambiental/aquecimento-global/"> Portal De Educação do Meio Ambiente de São Paulo</a>
+    </p>
+</div>
+<h2 class="texto">Últimas Notícias sobre o Meio Ambiente</h2>
+
+<div class="noticias">
+    @if (Model.Noticias != null && Model.Noticias.Count > 0)
+    {
+        <div class="container">
+            <div class="row">
+                @foreach (var noticia in Model.Noticias)
+                {
+                    <div class="col-md-4 mb-4">
+                        <!-- Ajuste a largura do cartão -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="@noticia.url" target="_blank">@noticia.title</a>
+                                </h5>
+                                <p class="card-text">
+                                    @if (noticia.description.Length > 100) // Limitar a descrição
+                                    {
+                                        @noticia.description.Substring(0, 100) 
+                                        }
+                                    else
+                                    {
+                                        @noticia.description
+                                        // Exibe a descrição completa se for menor que 100 caracteres
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="texto">Não foram encontradas notícias no momento.</p>
+    }
+</div>
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

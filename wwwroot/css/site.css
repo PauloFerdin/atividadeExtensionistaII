@@ -1,0 +1,129 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    position: relative;
+
+}
+
+.card {
+    background-color: whitesmoke;
+    border: 2px solid #4CAF50;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Sombra forte e bem marcada */
+    padding: 20px;
+    margin: 20px;
+}
+
+.card-title {
+    text-decoration: none;
+    color: black;
+}
+
+.card-text {
+    text-decoration: none;
+    color: black;
+}
+
+.texto {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color:black;
+}
+
+.button-container {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+    .button-container .btn {
+        margin: 0 10px; /* Espaçamento entre os botões */
+    }
+
+.btn-custom {
+    background-color: #32373B; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Centralizar texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Para que o padding funcione corretamente */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Efeito de transição */
+    position: center;
+}
+
+.btn-custom:hover {
+    background-color: white; /* Cor ao passar o mouse */
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url('/img/mattpalmer.jpg'); /* URL da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    /*background-repeat: no-repeat; /* Impede a repetição da imagem */
+}
+
+.noticia-card {
+    background-color: #32373B;
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaçamento entre as notícias */
+    background-color: #f9f9f9; /* Fundo leve */
+    transition: box-shadow 0.3s; /* Efeito de transição */
+}
+
+    .noticia-card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+    }
+
+.noticia-titulo {
+    font-size: 1.5rem; /* Tamanho do título */
+    font-weight: bold; /* Título em negrito */
+    color: #007bff; /* Cor do título */
+    text-decoration: none; /* Sem sublinhado */
+}
+
+    .noticia-titulo:hover {
+        text-decoration: underline; /* Sublinhado ao passar o mouse */
+    }
+
+.noticia-descricao {
+    font-size: 1rem; /* Tamanho da descrição */
+    color: #555; /* Cor da descrição */
+}
+
+.menu {
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0.3);
+    max-width: 100%;
+    clear: both;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra forte e bem marcada */
+    padding: 20px;
+    margin: 20px;
+    /* border-image: linear-gradient(45deg, #222E50, #FFC300) 1; /* Gradiente laranja para amarelo */ */
+}
+
+.noticias {
+
+}
